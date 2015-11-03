@@ -1,12 +1,19 @@
-package qulei.android.dagger1.demo;
+package qulei.android.dagger1.demo.main;
 
 import android.os.Bundle;
 
 import java.util.Collections;
 
+import qulei.android.dagger1.demo.MainApplication;
+import qulei.android.dagger1.demo.R;
 import qulei.android.dagger1.demo.abs.AbsActivity;
 import qulei.android.dagger1.demo.processor.LoginModule;
 
+/**
+ * 登录LoginActivity
+ * <p/>
+ * <p>手动增加一个loginModule</p>
+ */
 public class LoginActivity extends AbsActivity {
 
     @Override

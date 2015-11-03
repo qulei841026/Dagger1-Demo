@@ -24,7 +24,7 @@ public class AbsActivity extends AppCompatActivity {
             if (application instanceof AbsApp) {
                 AbsApp app = (AbsApp) application;
                 pushGraph(app, app.getTopModules());
-            }
+            }//默认的Module注入
         }
     }
 
@@ -34,6 +34,9 @@ public class AbsActivity extends AppCompatActivity {
         objectGraph = null;
     }
 
+    /**
+     * 注入Module。
+     */
     protected void pushGraph(AbsApp app, List<Object> modules) {
         if (modules != null && modules.size() > 0) {
             objectGraph = app.pushGraph(modules.toArray());
@@ -41,10 +44,16 @@ public class AbsActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 是否被注入
+     */
     protected boolean isInject() {
         return false;
     }
 
+    /**
+     * 提供Fragment的注入
+     */
     public void inject(Object object) {
         if (objectGraph != null) {
             objectGraph.inject(object);

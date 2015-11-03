@@ -1,8 +1,10 @@
-package qulei.android.dagger1.demo.module;
+package qulei.android.dagger1.demo.main;
 
 import dagger.Module;
 import dagger.Provides;
 import qulei.android.dagger1.demo.MainApplication;
+import qulei.android.dagger1.demo.provider.ProviderModule;
+import qulei.android.dagger1.demo.view.adapter.AdapterModule;
 
 @Module(
         injects = {

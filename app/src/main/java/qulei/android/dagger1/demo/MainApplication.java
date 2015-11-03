@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.List;
 
 import qulei.android.dagger1.demo.abs.AbsApp;
-import qulei.android.dagger1.demo.module.AppModule;
-import qulei.android.dagger1.demo.module.TopModule;
+import qulei.android.dagger1.demo.main.AppModule;
+import qulei.android.dagger1.demo.main.TopModule;
 
 public class MainApplication extends AbsApp {
 

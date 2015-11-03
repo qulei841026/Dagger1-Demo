@@ -6,6 +6,8 @@ import qulei.android.dagger1.demo.model.Message;
 
 public interface MessageProvider {
 
+    int getMessageUnread();
+
     void syncMessageCount();
 
     void findMessageItems(OnFindMessageListener listener);
@@ -13,7 +15,5 @@ public interface MessageProvider {
     interface OnFindMessageListener {
         void onItems(List<Message> items);
     }
-
-    int getMessageUnread();
 
 }
