@@ -8,7 +8,7 @@ import java.util.List;
 
 import qulei.android.dagger1.demo.model.Message;
 
-public class MessageProviderImpl implements MessageProvider {
+class MessageProviderImpl implements MessageProvider {
 
     protected int unreadCount;
 

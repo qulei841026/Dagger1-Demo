@@ -8,6 +8,11 @@ import android.widget.BaseAdapter;
 
 import java.util.List;
 
+/**
+ * ListView的Adapter基础类
+ * <p/>
+ * <p>对ViewHolder进行了封装</p>
+ */
 public abstract class ListCacheAdapter<T> extends BaseAdapter {
 
     protected List<T> mList;

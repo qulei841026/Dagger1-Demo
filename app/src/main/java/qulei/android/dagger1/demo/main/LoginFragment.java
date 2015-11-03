@@ -1,4 +1,4 @@
-package qulei.android.dagger1.demo;
+package qulei.android.dagger1.demo.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,11 +7,15 @@ import android.view.ViewGroup;
 
 import javax.inject.Inject;
 
+import qulei.android.dagger1.demo.R;
 import qulei.android.dagger1.demo.abs.AbsFragment;
 import qulei.android.dagger1.demo.processor.LoginListener;
 import qulei.android.dagger1.demo.processor.LoginProcessor;
 
 
+/**
+ * 登录LoginFragment
+ */
 public class LoginFragment extends AbsFragment implements LoginListener {
 
     @Inject

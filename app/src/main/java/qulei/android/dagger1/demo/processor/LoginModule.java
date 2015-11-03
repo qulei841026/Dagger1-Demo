@@ -2,20 +2,20 @@ package qulei.android.dagger1.demo.processor;
 
 import dagger.Module;
 import dagger.Provides;
-import qulei.android.dagger1.demo.LoginActivity;
-import qulei.android.dagger1.demo.LoginFragment;
+import qulei.android.dagger1.demo.main.LoginActivity;
+import qulei.android.dagger1.demo.main.LoginFragment;
 import qulei.android.dagger1.demo.MainApplication;
-import qulei.android.dagger1.demo.module.AppModule;
+import qulei.android.dagger1.demo.main.AppModule;
 import qulei.android.dagger1.demo.provider.AuthProvider;
 import qulei.android.dagger1.demo.provider.MessageProvider;
 
 
 @Module(
-        injects = {
+        injects = {     //注入到LoginActivity，LoginFragment
                 LoginActivity.class,
                 LoginFragment.class
         },
-        addsTo = AppModule.class
+        addsTo = AppModule.class    //并入到AppModule图谱中。
 )
 public class LoginModule {
 

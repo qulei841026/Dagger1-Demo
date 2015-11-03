@@ -14,11 +14,14 @@ public class AbsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         if (isInject()) {
             if (getActivity() instanceof AbsActivity) {
-                ((AbsActivity) getActivity()).inject(this);
+                ((AbsActivity) getActivity()).inject(this); //注入当前类
             }
         }
     }
 
+    /**
+     * 是否被注入
+     */
     protected boolean isInject() {
         return false;
     }

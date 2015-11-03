@@ -2,7 +2,7 @@ package qulei.android.dagger1.demo.provider;
 
 import android.content.Context;
 
-public class AuthProviderImpl implements AuthProvider {
+class AuthProviderImpl implements AuthProvider {
 
     Context mContext;
 

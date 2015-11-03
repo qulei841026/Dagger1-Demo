@@ -1,13 +1,13 @@
-package qulei.android.dagger1.demo.module;
+package qulei.android.dagger1.demo.view.adapter;
 
 import dagger.Module;
 import dagger.Provides;
 import qulei.android.dagger1.demo.MainApplication;
-import qulei.android.dagger1.demo.view.adapter.MessageAdapter;
 
-@Module(
-        library = true,
-        complete = false
+
+@Module(  //Adapter的注入声明，不能直接使用。通过AppModule引入。
+        library = true, //是组件
+        complete = false    //不是完成的Module
 )
 public class AdapterModule {
 

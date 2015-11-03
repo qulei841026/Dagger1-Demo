@@ -2,9 +2,9 @@
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/loginFragment"
-    android:name="qulei.android.dagger1.demo.LoginFragment"
+    android:name="qulei.android.dagger1.demo.main.LoginFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="qulei.android.dagger1.demo.LoginActivity">
+    tools:context="qulei.android.dagger1.demo.main.LoginActivity">
 
 </fragment>

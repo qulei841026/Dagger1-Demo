@@ -1,4 +1,4 @@
-package qulei.android.dagger1.demo;
+package qulei.android.dagger1.demo.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,12 +16,18 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import qulei.android.dagger1.demo.R;
 import qulei.android.dagger1.demo.abs.AbsActivity;
 import qulei.android.dagger1.demo.model.Message;
 import qulei.android.dagger1.demo.provider.AuthProvider;
 import qulei.android.dagger1.demo.provider.MessageProvider;
 import qulei.android.dagger1.demo.view.adapter.MessageAdapter;
 
+/**
+ * 主类
+ * <p/>
+ * <p>使用默认的注入方式</p>
+ */
 public class MainActivity extends AbsActivity {
 
     @Inject
