@@ -4,8 +4,6 @@ import java.util.Collections;
 import java.util.List;
 
 import qulei.android.dagger1.demo.abs.AbsApp;
-import qulei.android.dagger1.demo.main.AppModule;
-import qulei.android.dagger1.demo.main.TopModule;
 
 public class MainApplication extends AbsApp {
 
@@ -15,14 +13,8 @@ public class MainApplication extends AbsApp {
     }
 
     @Override
-    protected List<Object> getTopModules() {
-        return Collections.<Object>singletonList(new TopModule());
-    }
-
-    @Override
     protected List<Object> getAppModules() {
         return Collections.<Object>singletonList(new AppModule(this));
     }
-
 
 }

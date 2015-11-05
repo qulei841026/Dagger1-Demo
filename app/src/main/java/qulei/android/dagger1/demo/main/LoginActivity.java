@@ -1,13 +1,13 @@
 package qulei.android.dagger1.demo.main;
 
 import android.os.Bundle;
+import android.util.Log;
 
-import java.util.Collections;
+import javax.inject.Inject;
 
-import qulei.android.dagger1.demo.MainApplication;
 import qulei.android.dagger1.demo.R;
 import qulei.android.dagger1.demo.abs.AbsActivity;
-import qulei.android.dagger1.demo.processor.LoginModule;
+import qulei.android.dagger1.demo.provider.MessageProvider;
 
 /**
  * 登录LoginActivity
@@ -16,15 +16,18 @@ import qulei.android.dagger1.demo.processor.LoginModule;
  */
 public class LoginActivity extends AbsActivity {
 
+    @Inject
+    MessageProvider messageProvider;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        LoginFragment fragment = (LoginFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.loginFragment);
-
-        pushGraph((MainApplication) getApplication(),
-                Collections.<Object>singletonList(new LoginModule(fragment)));
+        Log.d("LoginActivity", "MessageUnread = " + messageProvider.getMessageUnread());
     }
 
+    @Override
+    protected boolean isInject() {
+        return true;
+    }
 }
