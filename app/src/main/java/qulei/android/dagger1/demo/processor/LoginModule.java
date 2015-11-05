@@ -2,10 +2,10 @@ package qulei.android.dagger1.demo.processor;
 
 import dagger.Module;
 import dagger.Provides;
+import qulei.android.dagger1.demo.AppModule;
 import qulei.android.dagger1.demo.main.LoginActivity;
 import qulei.android.dagger1.demo.main.LoginFragment;
 import qulei.android.dagger1.demo.MainApplication;
-import qulei.android.dagger1.demo.main.AppModule;
 import qulei.android.dagger1.demo.provider.AuthProvider;
 import qulei.android.dagger1.demo.provider.MessageProvider;
 

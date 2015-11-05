@@ -32,13 +32,6 @@ public class AbsApp extends Application {
     }
 
     /**
-     * 默认简单的UiModule的图谱
-     */
-    protected List<Object> getTopModules() {
-        return null;
-    }
-
-    /**
      * 并入Module到AppModule中
      */
     public ObjectGraph pushGraph(Object... modules) {

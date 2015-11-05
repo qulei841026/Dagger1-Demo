@@ -4,9 +4,11 @@ import android.app.Application;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import java.util.Collections;
 import java.util.List;
 
 import dagger.ObjectGraph;
+import qulei.android.dagger1.demo.main.TopModule;
 
 /**
  * Activity 基础类
@@ -20,13 +22,11 @@ public class AbsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (isInject()) {
-            Application application = getApplication();
-            if (application instanceof AbsApp) {
-                AbsApp app = (AbsApp) application;
-                pushGraph(app, app.getTopModules());
-            }//默认的Module注入
-        }
+            objectGraph = plusModules(getTopModules());
+            inject(this);
+        }   //默认的Module注入
     }
+
 
     @Override
     protected void onDestroy() {
@@ -35,20 +35,17 @@ public class AbsActivity extends AppCompatActivity {
     }
 
     /**
-     * 注入Module。
+     * 增加Module。
      */
-    protected void pushGraph(AbsApp app, List<Object> modules) {
+    public ObjectGraph plusModules(List<Object> modules) {
         if (modules != null && modules.size() > 0) {
-            objectGraph = app.pushGraph(modules.toArray());
-            objectGraph.inject(this);
+            Application application = getApplication();
+            if (application instanceof AbsApp) {
+                AbsApp app = (AbsApp) application;
+                return app.pushGraph(modules.toArray());
+            }
         }
-    }
-
-    /**
-     * 是否被注入
-     */
-    protected boolean isInject() {
-        return false;
+        return null;
     }
 
     /**
@@ -58,6 +55,20 @@ public class AbsActivity extends AppCompatActivity {
         if (objectGraph != null) {
             objectGraph.inject(object);
         }
+    }
+
+    /**
+     * 默认简单的UiModule的图谱
+     */
+    protected List<Object> getTopModules() {
+        return Collections.<Object>singletonList(new TopModule());
+    }
+
+    /**
+     * 是否被注入
+     */
+    protected boolean isInject() {
+        return false;
     }
 
 }

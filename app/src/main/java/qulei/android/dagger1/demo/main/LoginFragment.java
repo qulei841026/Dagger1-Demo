@@ -5,11 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Collections;
+
 import javax.inject.Inject;
 
 import qulei.android.dagger1.demo.R;
 import qulei.android.dagger1.demo.abs.AbsFragment;
 import qulei.android.dagger1.demo.processor.LoginListener;
+import qulei.android.dagger1.demo.processor.LoginModule;
 import qulei.android.dagger1.demo.processor.LoginProcessor;
 
 
@@ -28,6 +31,7 @@ public class LoginFragment extends AbsFragment implements LoginListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        plusModules(Collections.<Object>singletonList(new LoginModule(this)));
     }
 
     @Override
